@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Profile</title>
+    <!-- Latest Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-black text-white">
+    <!-- Top Header -->
+    <div class="relative bg-blue-500 h-32">
+        <div class="absolute top-4 left-4">
+            <i class="ri-arrow-left-line text-white text-2xl"></i>
+        </div>
+        <div class="absolute top-4 right-4">
+            <i class="ri-search-line text-white text-2xl"></i>
+        </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="relative">
+        <div class="">
+            <img src="https://via.placeholder.com/80" alt="Profile"
+                class="w-24 h-24 rounded-full border-4 border-black" />
+        </div>
+        <div class="px-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-xl font-bold">Harsh Sharma</h1>
+                    <p class="text-sm text-gray-400">@harshbhaiyaa</p>
+                </div>
+                <button class="bg-gray-800 px-4 py-2 rounded-full text-sm">Edit profile</button>
+            </div>
+            <button class="mt-2 bg-gray-800 text-sm px-4 py-2 rounded-full">Get verified</button>
+            <p class="mt-4 text-sm">
+                Founder | Sheryians Coding School 🦁 Talks about students, their problems, their life & their goals.
+                Connect if you care about students as well.
+            </p>
+            <div class="mt-2 text-sm text-gray-400 space-y-1">
+                <p><i class="ri-briefcase-line"></i> Entrepreneur <span class="ml-2">Bhopal</span></p>
+                <p><i class="ri-link-line"></i> <a href="#" class="text-blue-500">sheryians.com</a></p>
+                <p><i class="ri-calendar-line"></i> Born 7 October 1998</p>
+                <p><i class="ri-time-line"></i> Joined May 2020</p>
+            </div>
+            <div class="mt-4 flex items-center text-gray-400 space-x-4">
+                <p><span class="font-bold text-white">17</span> Following</p>
+                <p><span class="font-bold text-white">408</span> Followers</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="flex justify-around border-b border-gray-700 mt-4 text-gray-400">
+        <button class="py-3 text-white border-b-2 border-blue-500">Posts</button>
+        <button class="py-3">Replies</button>
+        <button class="py-3">Highlights</button>
+        <button class="py-3">Articles</button>
+        <button class="py-3">Media</button>
+        <button class="py-3">Likes</button>
+    </div>
+
+    <!-- Tweet Section -->
+    <div class="p-4 border-b border-gray-700">
+        <p class="text-gray-400 text-sm">You reposted</p>
+        <div class="mt-2">
+            <div class="flex space-x-2">
+                <img src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-full" />
+                <div>
+                    <p class="text-sm">
+                        <span class="font-bold text-white">Hasir Ali</span>
+                        <span class="text-gray-400">@haxir_ali</span> • 02/05/24
+                    </p>
+                    <p class="mt-1 text-sm">
+                        🚀 <span class="text-blue-500">#Day94</span> of
+                        <span class="text-blue-500">#100DaysOfCode</span>:
+                        <br>
+                        🍀 Gaining confidence after putting theory into practice. Big shoutout to
+                        <span class="text-blue-500">@sheryians_</span> and
+                        <span class="text-blue-500">@harshbhaiyaa</span> for simplifying concepts as much as possible!
+                    </p>
+                    <div class="mt-2 bg-gray-800 h-48 flex justify-center items-center">
+                        <i class="ri-loader-4-line text-white text-3xl animate-spin"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-4 flex items-center space-x-6 text-gray-400 text-sm">
+                <i class="ri-chat-3-line"></i>
+                <i class="ri-repeat-line"></i>
+                <i class="ri-heart-line"></i>
+                <i class="ri-bar-chart-box-line"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 w-full bg-black border-t border-gray-700 flex justify-around py-3 text-gray-400">
+        <i class="ri-home-line text-2xl"></i>
+        <i class="ri-search-line text-2xl"></i>
+        <i class="ri-pencil-line text-2xl"></i>
+        <i class="ri-group-line text-2xl"></i>
+        <i class="ri-notification-line text-2xl relative">
+            <span class="absolute -top-2 -right-2 bg-blue-500 text-xs text-white rounded-full px-1">20+</span>
+        </i>
+    </div>
+</body>
+
+</html>

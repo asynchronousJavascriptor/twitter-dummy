@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Login Page</title>
+    <!-- Latest Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Remix Icon CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-black text-white h-screen flex items-center justify-center">
+    <div class="w-full max-w-md text-center px-6">
+        <i class="ri-twitter-fill text-5xl text-white mb-8"></i>
+        <h1 class="text-2xl font-semibold mb-6">See what’s happening in the world right now.</h1>
+        <div class="space-y-4">
+            <button
+                class="flex items-center justify-center w-full py-3 bg-white text-black font-medium rounded-full shadow-md">
+                <i class="ri-google-fill text-xl mr-3"></i> Continue with Google
+            </button>
+            <button
+                class="flex items-center justify-center w-full py-3 bg-white text-black font-medium rounded-full shadow-md">
+                <i class="ri-apple-fill text-xl mr-3"></i> Continue with Apple
+            </button>
+        </div>
+        <div class="my-4 text-gray-500">or</div>
+        <a href="/register" class="w-full inline-block py-3 bg-gray-900 text-white font-medium rounded-full shadow-md">
+            Create account
+        </a>
+        <p class="text-sm text-gray-500 mt-6">
+            By signing up, you agree to our <a href="#" class="text-blue-500">Terms</a>,
+            <a href="#" class="text-blue-500">Privacy Policy</a>, and
+            <a href="#" class="text-blue-500">Cookie Use</a>.
+        </p>
+        <div class="mt-6 text-sm">
+            <span>Have an account already? </span>
+            <a href="/login" class="text-blue-500">Log in</a>
+        </div>
+    </div>
+</body>
+
+</html>

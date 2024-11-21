@@ -14,11 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.get("/", function (req, res) {
-    res.render("login");
+    res.render("welcome");
 });
 
 app.get("/profile", isLoggedIn, function (req, res) {
-    
+    res.render("profile");
 });
 
 app.get("/register", function (req, res) {
@@ -26,19 +26,18 @@ app.get("/register", function (req, res) {
 });
 
 app.post("/register", function (req, res) {
-    let { username, password, email } = req.body;
+    let { username, password } = req.body;
 
     bcrypt.genSalt(10, function (err, salt) {
         bcrypt.hash(password, salt, async function (err, hash) {
             await userModel.create({
                 username,
-                email,
                 password: hash
             })
 
-            let token = jwt.sign({ email }, "secret"); // don't do this, extremely unsafe, for representational purpose only.
+            let token = jwt.sign({ username }, "secret"); // don't do this, extremely unsafe, for representational purpose only.
             res.cookie("token", token);
-            res.send("created");
+            res.redirect("/profile");
         })
     })
 
@@ -55,9 +54,12 @@ app.post("/login", async function (req, res) {
 
     bcrypt.compare(password, user.password, function (err, result) {
         if (result) {
-            let token = jwt.sign({ email }, "secret"); // don't repeat this, extremely unsafe
+            let token = jwt.sign({ username }, "secret"); // don't repeat this, extremely unsafe
             res.cookie("token", token);
-            res.send("loggedin");
+            res.redirect("/profile");
+        }
+        else {
+            res.redirect("/login");
         }
     });
 })
