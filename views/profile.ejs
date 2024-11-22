@@ -31,8 +31,11 @@
         <div class="px-4">
             <div class="flex items-center justify-between">
                 <div>
-                    <h1 class="text-xl font-bold">Harsh Sharma</h1>
-                    <p class="text-sm text-gray-400">@harshbhaiyaa</p>
+                    <h1 class="text-xl capitalize font-bold">
+                        <%= user.username %>
+                    </h1>
+                    <p class="text-sm text-gray-400">@<%= user.username %>
+                    </p>
                 </div>
                 <button class="bg-gray-800 px-4 py-2 rounded-full text-sm">Edit profile</button>
             </div>
