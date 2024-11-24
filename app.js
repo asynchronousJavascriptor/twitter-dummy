@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const userModel = require("./models/user.model");
+const tweetModel = require("./models/tweet.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const flash = require('connect-flash');
@@ -21,7 +22,7 @@ app.use(expressSession({
 }));
 app.use(flash());
 
-app.get("/", function (req, res) {
+app.get("/", redirectToFeed, function (req, res) {
     res.render("welcome");
 });
 
@@ -88,6 +89,25 @@ app.get("/logout", function (req, res) {
     res.redirect("/login");
 })
 
+app.get("/feed", isLoggedIn, async function (req, res) {
+    let tweets = await tweetModel.find()
+    res.render("feed", { tweets });
+})
+
+app.get("/createpost", isLoggedIn, function (req, res) {
+    res.render("createpost");
+})
+
+app.post("/createpost", isLoggedIn, async function (req, res) {
+    let { tweet } = req.body;
+    await tweetModel.create({
+        tweet,
+        username: req.user.username
+    })
+    res.redirect("/feed");
+})
+
+
 function isLoggedIn(req, res, next) {
     if (!req.cookies.token) {
         req.flash("error", "you must be loggedin.");
@@ -104,6 +124,23 @@ function isLoggedIn(req, res, next) {
         }
     }) // don't write secret here, it's extremely unsafe
 
+}
+
+function redirectToFeed(req, res, next) {
+    if (req.cookies.token) {
+        jwt.verify(req.cookies.token, "secret", function (err, decoded) {
+            if (err) {
+                res.cookie("token", "");
+                return next();
+            }
+            else {
+                res.redirect("/feed");
+            }
+        })
+    }
+    else{
+        return next();
+    }
 }
 
 const PORT = process.env.PORT || 3000;

@@ -1,21 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twitter Profile</title>
-    <!-- Latest Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Remix Icon CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
-
-<body class="bg-black text-white">
     <!-- Top Header -->
     <div class="relative bg-blue-500 h-32">
         <div class="absolute top-4 left-4">
-            <i class="ri-arrow-left-line text-white text-2xl"></i>
+            <a href="/">
+                <i class="ri-arrow-left-line text-white text-2xl"></i>
+            </a>
         </div>
         <div class="absolute top-4 right-4">
             <i class="ri-search-line text-white text-2xl"></i>
@@ -23,8 +13,8 @@
     </div>
 
     <!-- Profile Section -->
-    <div class="relative">
-        <div class="">
+    <div class="relative mt-2">
+        <div class="px-2">
             <img src="https://via.placeholder.com/80" alt="Profile"
                 class="w-24 h-24 rounded-full border-4 border-black" />
         </div>
@@ -99,17 +89,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Bottom Navigation -->
-    <div class="fixed bottom-0 w-full bg-black border-t border-gray-700 flex justify-around py-3 text-gray-400">
-        <i class="ri-home-line text-2xl"></i>
-        <i class="ri-search-line text-2xl"></i>
-        <i class="ri-pencil-line text-2xl"></i>
-        <i class="ri-group-line text-2xl"></i>
-        <i class="ri-notification-line text-2xl relative">
-            <span class="absolute -top-2 -right-2 bg-blue-500 text-xs text-white rounded-full px-1">20+</span>
-        </i>
-    </div>
-</body>
-
-</html>
+    <%- include('./partials/footer.ejs') %>

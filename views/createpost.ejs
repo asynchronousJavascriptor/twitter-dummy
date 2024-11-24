@@ -1,0 +1,49 @@
+<%- include('./partials/header.ejs') %>
+
+    <!-- Header -->
+    <div class="flex items-center justify-between px-4 py-2 border-b border-gray-700">
+        <a href="/feed" class="text-blue-500 text-sm">Cancel</a>
+        <span class="text-sm text-gray-400">App Store</span>
+        <button id="createpost-btn" class="bg-blue-500 text-white text-sm px-4 py-1 rounded-full">Post</button>
+    </div>
+
+    <!-- Input Section -->
+    <form id="createpost-form" action="/createpost" method="post">
+        <div class="flex space-x-4 px-4 py-4">
+            <img src="https://via.placeholder.com/40" alt="Profile" class="w-10 h-10 rounded-full" />
+            <textarea name="tweet" placeholder="What’s happening?"
+                class="w-full bg-transparent text-gray-300 placeholder-gray-500 focus:outline-none text-lg resize-none"
+                rows="4"></textarea>
+        </div>
+    </form>
+
+    <div class="fixed bottom-0 w-full">
+        <!-- Reply Options -->
+        <div class="px-4 py-3 text-blue-500 text-sm border-b border-gray-700 flex items-center space-x-1">
+            <i class="ri-earth-line"></i>
+            <span>Everyone can reply</span>
+        </div>
+
+        <!-- Tweet Options -->
+        <div class="flex justify-between items-center px-4 py-4">
+            <div class="flex items-center space-x-4 text-blue-500">
+                <i class="ri-font-size text-xl"></i>
+                <i class="ri-image-line text-xl"></i>
+                <i class="ri-live-line text-xl"></i>
+                <i class="ri-gif-line text-xl"></i>
+                <i class="ri-bar-chart-grouped-line text-xl"></i>
+                <i class="ri-play-list-line text-xl"></i>
+                <i class="ri-map-pin-line text-xl"></i>
+            </div>
+            <i class="ri-add-circle-line text-blue-500 text-2xl"></i>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector("#createpost-btn").addEventListener("click", function () {
+            document.querySelector("#createpost-form").submit();
+        })
+    </script>
+    </body>
+
+    </html>
